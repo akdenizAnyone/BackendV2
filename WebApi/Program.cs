@@ -45,20 +45,20 @@ namespace WebApi
                     await Infrastructure.Identity.Seeds.DefaultBasicUser.SeedAsync(userManager, roleManager);
 
 
-                    var categoryRepository = services.GetRequiredService<ICategoryRepositoryAsync>();
-                    var productRepository = services.GetRequiredService<IProductRepositoryAsync>();
-                    var addressRepository = services.GetRequiredService<IAddressRepositoryAsync>();
-                    var certificateRepository = services.GetRequiredService<ICertificateRepositoryAsync>();
-                    var workHistoryRepository = services.GetRequiredService<IWorkHistoryRepositoryAsync>();
-                    var educationRepository = services.GetRequiredService<IEducationRepositoryAsync>();
-                    var projectRepository = services.GetRequiredService<IProjectRepositoryAsync>();
+                    // var categoryRepository = services.GetRequiredService<ICategoryRepositoryAsync>();
+                    // var productRepository = services.GetRequiredService<IProductRepositoryAsync>();
+                    // var addressRepository = services.GetRequiredService<IAddressRepositoryAsync>();
+                    // var certificateRepository = services.GetRequiredService<ICertificateRepositoryAsync>();
+                    // var workHistoryRepository = services.GetRequiredService<IWorkHistoryRepositoryAsync>();
+                    // var educationRepository = services.GetRequiredService<IEducationRepositoryAsync>();
+                    // var projectRepository = services.GetRequiredService<IProjectRepositoryAsync>();
 
-                    var contactRepository = services.GetRequiredService<IContactRepositoryAsync>();
+                    // var contactRepository = services.GetRequiredService<IContactRepositoryAsync>();
 
-                    var announcementRepository = services.GetRequiredService<IAnnouncementRepositoryAsync>();
-                    var personnelRepository = services.GetRequiredService<IPersonnelRepositoryAsync>();
-                    var inventoryRepository = services.GetRequiredService<IInventoryRepositoryAsync>();
-                    var eventRepository = services.GetRequiredService<IEventRepositoryAsync>();
+                    // var announcementRepository = services.GetRequiredService<IAnnouncementRepositoryAsync>();
+                    // var personnelRepository = services.GetRequiredService<IPersonnelRepositoryAsync>();
+                    // var inventoryRepository = services.GetRequiredService<IInventoryRepositoryAsync>();
+                    // var eventRepository = services.GetRequiredService<IEventRepositoryAsync>();
                     //var logger = services.GetRequiredService<Microsoft.Extensions.Logging.ILogger>();
                     // await Infrastructure.Persistence.Seeds.DefaultCategories.SeedAsync(categoryRepository);
                     // await Infrastructure.Persistence.Seeds.DefaultAddresses.SeedAsync(addressRepository);

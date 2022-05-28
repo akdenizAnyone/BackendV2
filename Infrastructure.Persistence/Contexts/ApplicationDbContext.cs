@@ -23,19 +23,6 @@ namespace Infrastructure.Persistence.Contexts
             _dateTime = dateTime;
             _authenticatedUser = authenticatedUser;
         }
-        // public DbSet<Product> Products { get; set; }
-        // public DbSet<Category> Categories { get; set; }
-        // public DbSet<Address> Addresses { get; set; }
-        // public DbSet<Certificate> Certificates { get; set; }
-        // public DbSet<WorkHistory> WorkHistory { get; set; }
-        // public DbSet<Project> Projects { get; set; }
-        // public DbSet<Announcement> Announcements { get; set; }
-        // public DbSet<Education> Educations { get; set; }
-        // public DbSet<Contact> Contacts { get; set; }
-        // public DbSet<Personnel> Personnels { get; set; }
-        // public DbSet<Inventory> Inventories { get; set; }
-        // public DbSet<Event> Events { get; set; }
-
         //mines
         public DbSet<Conversation> Conversations { get; set; }
         public DbSet<User> Users { get; set; }

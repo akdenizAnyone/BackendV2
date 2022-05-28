@@ -1,0 +1,15 @@
+C:\Users\mazlu\Documents\Software\BackendV2\Infrastructure.Shared\bin\Debug\netcoreapp3.1\Infrastructure.Shared.deps.json
+C:\Users\mazlu\Documents\Software\BackendV2\Infrastructure.Shared\bin\Debug\netcoreapp3.1\Infrastructure.Shared.dll
+C:\Users\mazlu\Documents\Software\BackendV2\Infrastructure.Shared\bin\Debug\netcoreapp3.1\Infrastructure.Shared.pdb
+C:\Users\mazlu\Documents\Software\BackendV2\Infrastructure.Shared\bin\Debug\netcoreapp3.1\Application.dll
+C:\Users\mazlu\Documents\Software\BackendV2\Infrastructure.Shared\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\mazlu\Documents\Software\BackendV2\Infrastructure.Shared\bin\Debug\netcoreapp3.1\Application.pdb
+C:\Users\mazlu\Documents\Software\BackendV2\Infrastructure.Shared\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\mazlu\Documents\Software\BackendV2\Infrastructure.Shared\obj\Debug\netcoreapp3.1\Infrastructure.Shared.csproj.AssemblyReference.cache
+C:\Users\mazlu\Documents\Software\BackendV2\Infrastructure.Shared\obj\Debug\netcoreapp3.1\Infrastructure.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mazlu\Documents\Software\BackendV2\Infrastructure.Shared\obj\Debug\netcoreapp3.1\Infrastructure.Shared.AssemblyInfoInputs.cache
+C:\Users\mazlu\Documents\Software\BackendV2\Infrastructure.Shared\obj\Debug\netcoreapp3.1\Infrastructure.Shared.AssemblyInfo.cs
+C:\Users\mazlu\Documents\Software\BackendV2\Infrastructure.Shared\obj\Debug\netcoreapp3.1\Infrastructure.Shared.csproj.CoreCompileInputs.cache
+C:\Users\mazlu\Documents\Software\BackendV2\Infrastructure.Shared\obj\Debug\netcoreapp3.1\Infrastructure.Shared.csproj.CopyComplete
+C:\Users\mazlu\Documents\Software\BackendV2\Infrastructure.Shared\obj\Debug\netcoreapp3.1\Infrastructure.Shared.dll
+C:\Users\mazlu\Documents\Software\BackendV2\Infrastructure.Shared\obj\Debug\netcoreapp3.1\Infrastructure.Shared.pdb
