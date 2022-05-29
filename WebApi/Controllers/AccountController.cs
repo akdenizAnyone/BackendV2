@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.DTOs.Account;
+using Application.Features.Users.Command;
 using Application.Interfaces;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,9 +16,11 @@ namespace WebApi.Controllers
     public class AccountController : ControllerBase
     {
         private readonly IAccountService _accountService;
-        public AccountController(IAccountService accountService)
+        private readonly IMediator _meditor;
+        public AccountController(IAccountService accountService, IMediator mediator)
         {
             _accountService = accountService;
+            _meditor=mediator;
         }
         [HttpPost("authenticate")]
         public async Task<IActionResult> AuthenticateAsync(AuthenticationRequest request)
@@ -27,7 +31,16 @@ namespace WebApi.Controllers
         public async Task<IActionResult> RegisterAsync(RegisterRequest request)
         {
             var origin = Request.Headers["origin"];
-            return Ok(await _accountService.RegisterAsync(request, origin));
+            var result= await _accountService.RegisterAsync(request, origin);
+            if(result.Succeeded==true){
+                var resultFromUserController=await _meditor.Send(new CreateUserCommand{ 
+                    ApplicationId=result.Data.Id,
+                    UserName=result.Data.UserName,
+                    FullName=result.Data.FullName,
+                    Email=result.Data.Email
+                    });
+            }
+            return Ok(result);
         }
         [HttpGet("confirm-email")]
         public async Task<IActionResult> ConfirmEmailAsync([FromQuery]string userId, [FromQuery]string code)

@@ -79,7 +79,7 @@ namespace Infrastructure.Identity.Services
             return new Response<AuthenticationResponse>(response, $"Authenticated {user.UserName}");
         }
 
-        public async Task<Response<string>> RegisterAsync(RegisterRequest request, string origin)
+        public async Task<Response<RegisterDto>> RegisterAsync(RegisterRequest request, string origin)
         {
             var userWithSameUserName = await _userManager.FindByNameAsync(request.UserName);
             if (userWithSameUserName != null)
@@ -103,7 +103,16 @@ namespace Infrastructure.Identity.Services
                     var verificationUri = await SendVerificationEmail(user, origin);
                     //TODO: Attach Email Service here and configure it via appsettings
                     //await _emailService.SendAsync(new Application.DTOs.Email.EmailRequest() { From = "mail@codewithmukesh.com", To = user.Email, Body = $"Please confirm your account by visiting this URL {verificationUri}", Subject = "Confirm Registration" });
-                    return new Response<string>(user.Id, message: $"User Registered. Please confirm your account by visiting this URL {verificationUri}");
+
+                    
+                    var registerDto=new RegisterDto{
+                        Id=user.Id,
+                        UserName=user.UserName,
+                        FullName=$"{user.FirstName} {user.LastName}",
+                        Email=user.Email
+                    };
+
+                    return new Response<RegisterDto>(registerDto, message: $"User Registered. Please confirm your account by visiting this URL {verificationUri}");
                 }
                 else
                 {

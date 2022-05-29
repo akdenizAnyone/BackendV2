@@ -10,11 +10,11 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Infrastructure.Identity, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\mazlu\\Documents\\Software\\BackendV2\\Infrastructure.Identity", "Infrastructure.Identity.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Infrastructure.Identity, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null", "c:\\Users\\mazlu\\Documents\\Software\\BackendV2\\Infrastructure.Identity", "Infrastructure.Identity.csproj", "0")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Infrastructure.Persistence, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" +
-    "", "C:\\Users\\mazlu\\Documents\\Software\\BackendV2\\Infrastructure.Persistence", "Infrastructure.Persistence.csproj", "0")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Infrastructure.Shared, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\mazlu\\Documents\\Software\\BackendV2\\Infrastructure.Shared", "Infrastructure.Shared.csproj", "0")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("WebApi, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\mazlu\\Documents\\Software\\BackendV2\\WebApi", "WebApi.csproj", "0")]
+    "", "c:\\Users\\mazlu\\Documents\\Software\\BackendV2\\Infrastructure.Persistence", "Infrastructure.Persistence.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Infrastructure.Shared, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null", "c:\\Users\\mazlu\\Documents\\Software\\BackendV2\\Infrastructure.Shared", "Infrastructure.Shared.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("WebApi, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null", "c:\\Users\\mazlu\\Documents\\Software\\BackendV2\\WebApi", "WebApi.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("IntegrationTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

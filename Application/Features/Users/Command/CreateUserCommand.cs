@@ -12,9 +12,11 @@ namespace Application.Features.Users.Command
 
     public class CreateUserCommand : IRequest<int>
     {
-        public string ApplicatinUserId { get; set; }
+        public string ApplicationId { get; set; }
         public string UserName { get; set; }
         public string FullName { get; set; }
+
+        public string Email { get; set; }
     }
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, int>
     {
@@ -36,8 +38,9 @@ namespace Application.Features.Users.Command
 
             var entity = new User
             {
-                ApplicationUserId = request.ApplicatinUserId,
+                ApplicationUserId = request.ApplicationId,
                 UserName = request.UserName,
+                Email = request.Email,
                 FullName = request.FullName.Trim()
             };
 
