@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Application.Features.Likes.Commands;
 using Microsoft.AspNetCore.Mvc;
@@ -6,7 +7,7 @@ namespace WebApi.Controllers.v1
 {
 
     [ApiVersion("1.0")]
-
+    [Authorize]
     public class LikeController : BaseApiController
 
     {
@@ -26,5 +27,9 @@ namespace WebApi.Controllers.v1
 
             await Mediator.Send(command);
         }
+    }
+
+    internal class AuthorizeAttribute : Attribute
+    {
     }
 }

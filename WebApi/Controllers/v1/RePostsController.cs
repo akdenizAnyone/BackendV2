@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using Application.Features.RePosts.Commands;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers.v1
@@ -7,6 +8,7 @@ namespace WebApi.Controllers.v1
 
     [ApiVersion("1.0")]
 
+    [Authorize]
     public class RePostsController : BaseApiController
     {
 

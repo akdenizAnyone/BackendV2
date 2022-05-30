@@ -11,6 +11,7 @@ namespace WebApi.Controllers.v1
 
     [ApiVersion("1.0")]
 
+    [Authorize]
     public class FollowController : BaseApiController
     {
 

@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Authorization;
 using Application.Features.Users.ViewModels;
 using System.Collections.Generic;
 
+
+
 namespace WebApi.Controllers.v1{
 
     [ApiVersion("1.0")]
+    [Authorize]
     public class UsersController:BaseApiController{
 
         
@@ -30,12 +33,14 @@ namespace WebApi.Controllers.v1{
             return await Mediator.Send(new GetUserByApplicationIdQuery{ApplicationUserId=id});
         } 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<UserProfileVM>> GetUserProfile([FromQuery]string username)
         {
             var query = new GetUserProfileQuery {Username = username };
             return await Mediator.Send(query);
         }
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<UserSearchDto>>> SearchUser([FromQuery]string q)
         {
             var query = new UserSearchQuery { Search = q };
