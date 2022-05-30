@@ -34,12 +34,14 @@ namespace Infrastructure.Identity.Services
         private readonly IEmailService _emailService;
         private readonly JWTSettings _jwtSettings;
         private readonly IDateTimeService _dateTimeService;
+        private readonly IApplicationDbContext   _context;
         public AccountService(UserManager<ApplicationUser> userManager, 
             RoleManager<IdentityRole> roleManager, 
             IOptions<JWTSettings> jwtSettings, 
             IDateTimeService dateTimeService, 
             SignInManager<ApplicationUser> signInManager,
-            IEmailService emailService)
+            IEmailService emailService,
+            IApplicationDbContext context)
         {
             _userManager = userManager;
             _roleManager = roleManager;
@@ -47,6 +49,7 @@ namespace Infrastructure.Identity.Services
             _dateTimeService = dateTimeService;
             _signInManager = signInManager;
             this._emailService = emailService;
+            _context=context;
         }
 
         public async Task<Response<AuthenticationResponse>> AuthenticateAsync(AuthenticationRequest request, string ipAddress)
@@ -65,9 +68,17 @@ namespace Infrastructure.Identity.Services
             {
                 throw new ApiException($"Account Not Confirmed for '{request.Email}'.");
             }
+
+            var intId=_context.Users.FirstOrDefault(x=>x.ApplicationUserId==user.Id).Id;
+            
+
             JwtSecurityToken jwtSecurityToken = await GenerateJWToken(user);
             AuthenticationResponse response = new AuthenticationResponse();
+
             response.Id = user.Id;
+
+            response.IntId=intId;
+
             response.JWToken = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
             response.Email = user.Email;
             response.UserName = user.UserName;
