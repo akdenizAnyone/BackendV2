@@ -27,6 +27,7 @@ namespace WebApi
             services.AddIdentityInfrastructure(_config);
             services.AddPersistenceInfrastructure(_config);
             services.AddSharedInfrastructure(_config);
+
             services.AddCors(options =>
             {
             options.AddDefaultPolicy(
@@ -34,10 +35,6 @@ namespace WebApi
                 {
                     builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); ;
                 });
-
-
-
-                    
             }); 
             
             services.AddSwaggerExtension();
