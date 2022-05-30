@@ -39,7 +39,7 @@ namespace Application.Features.Posts.Command
 
             var userId=_authenticatedUserService.UserId; 
             var userIntId=_context.Users.FirstOrDefault(x=>x.ApplicationUserId==userId).Id;
-            var post = new Post { Content = request.Content, MediaId = request.MediaId, AnswerToId = request.AnswerToId,UserId=userIntId };
+            var post = new Post { Content = request.Content, MediaId = request.MediaId, AnswerToId = request.AnswerToId,UserId=userIntId }jk;
             
 
             _context.Posts.Add(post);
