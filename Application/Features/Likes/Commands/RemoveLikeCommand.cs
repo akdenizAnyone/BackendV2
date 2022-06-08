@@ -25,7 +25,7 @@ namespace Application.Features.Likes.Commands{
 
         public async Task<Unit> Handle(RemoveLikeCommand request, CancellationToken cancellationToken)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(d => d.ApplicationUserId == _currentUser.UserId, cancellationToken);
+            var user = await _context.Users.FirstOrDefaultAsync(d => d.UserName== _currentUser.UserId, cancellationToken);
             if(user == null)
                 throw new ApiException("Forbidden Access");
 

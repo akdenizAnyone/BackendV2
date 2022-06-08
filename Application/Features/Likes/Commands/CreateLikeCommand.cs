@@ -25,7 +25,7 @@ namespace Application.Features.Likes.Commands{
 
         public async Task<Unit> Handle(CreateLikeCommand request, CancellationToken cancellationToken)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(d => d.ApplicationUserId == _currentUser.UserId, cancellationToken);
+            var user = await _context.Users.FirstOrDefaultAsync(d => d.UserName== _currentUser.UserId, cancellationToken);
             if(user == null)
                 throw new ApiException("Forbidden Access");
 
@@ -35,10 +35,11 @@ namespace Application.Features.Likes.Commands{
 
 
             var like = await _context.Likes.FirstOrDefaultAsync(l => l.UserId== user.Id && l.PostId == request.PostId, cancellationToken);
-            if(like != null) {
-                _context.Likes.Remove(like);
+            if(like == null) {
+                _context.Likes.Add(new Like{UserId=user.Id,PostId=post.Id});
                 await _context.SaveChangesAsync(cancellationToken);
             }
+            
             return Unit.Value;
         }
     }

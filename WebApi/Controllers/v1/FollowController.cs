@@ -4,6 +4,7 @@ using Application.Features.Follows.Commands;
 using Application.Features.Follows.Dtos;
 using Application.Features.Follows.Queries;
 using Application.Features.Follows.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers.v1

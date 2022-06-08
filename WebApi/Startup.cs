@@ -4,6 +4,7 @@ using Infrastructure.Identity;
 using Infrastructure.Persistence;
 using Infrastructure.Persistence.Contexts;
 using Infrastructure.Shared;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -47,6 +48,11 @@ namespace WebApi
             services.AddSingleton<ICurrentUserService, CurrentUserService>();
             services.AddHttpContextAccessor();
 
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -61,16 +67,18 @@ namespace WebApi
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
-            //   app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseCors();
             app.UseRouting();
+            
             app.UseAuthentication();
+
             app.UseAuthorization();
             app.UseSwaggerExtension();
             app.UseSwaggerUI(x=>{
                 x.SwaggerEndpoint("/swagger/v1/swagger.json","webapi");
                 x.RoutePrefix="";
-                });
+            });
                
 
             app.UseErrorHandlingMiddleware();

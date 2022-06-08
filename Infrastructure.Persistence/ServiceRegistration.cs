@@ -37,19 +37,6 @@ namespace Infrastructure.Persistence
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
             #region Repositories
             services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
-            // services.AddTransient<IProductRepositoryAsync, ProductRepositoryAsync>();
-            // services.AddTransient<ICategoryRepositoryAsync, CategoryRepositoryAsync>();
-            // services.AddTransient<IAddressRepositoryAsync, AddressRepositoryAsync>();
-            // services.AddTransient<ICertificateRepositoryAsync, CertificateRepositoryAsync>();
-            // services.AddTransient<IWorkHistoryRepositoryAsync, WorkHistoryRepositoryAsync>();
-            // services.AddTransient<IEducationRepositoryAsync, EducationRepositoryAsync>();
-
-            // services.AddTransient<IContactRepositoryAsync, ContactRepositoryAsync>();
-            // services.AddTransient<IProjectRepositoryAsync, ProjectRepositoryAsync>();
-            // services.AddTransient<IAnnouncementRepositoryAsync, AnnouncementRepositoryAsync>();
-            // services.AddTransient<IPersonnelRepositoryAsync, PersonnelRepositoryAsync>();
-            // services.AddTransient<IInventoryRepositoryAsync, InventoryRepositoryAsync>();
-            // services.AddTransient<IEventRepositoryAsync, EventRepositoryAsync>();
             
             services.AddTransient<IUserRepositoryAsync, UserRepositoryAsync>();
             services.AddTransient<IPostRepositoryAsync, PostRepositoryAsync>();

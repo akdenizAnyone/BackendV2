@@ -48,6 +48,7 @@ namespace Infrastructure.Identity
             services.AddTransient<IAccountService, AccountService>();
             #endregion
             services.Configure<JWTSettings>(configuration.GetSection("JWTSettings"));
+
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

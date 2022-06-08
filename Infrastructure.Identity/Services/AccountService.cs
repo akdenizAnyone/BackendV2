@@ -107,6 +107,7 @@ namespace Infrastructure.Identity.Services
                 UserName = request.UserName
             };
             var userWithSameEmail = await _userManager.FindByEmailAsync(request.Email);
+
             if (userWithSameEmail == null)
             {
                 var result = await _userManager.CreateAsync(user, request.Password);
